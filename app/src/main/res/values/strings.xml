@@ -3,4 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="commentary">Commentary</string>
+    <string name="match_stats">Match Stats</string>
+    <string name="result_string">%d - %d</string>
 </resources>

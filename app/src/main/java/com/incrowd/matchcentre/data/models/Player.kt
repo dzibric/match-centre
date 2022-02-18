@@ -1,7 +1,14 @@
 package com.incrowd.matchcentre.data.models
 
-import androidx.room.Entity
+import com.incrowd.matchcentre.data.match.models.stats.PlayerStats
 
-@Entity(tableName = "players")
-class Player {
-}
+class Player(
+    val id: Long,
+    val firstName: String,
+    val lastName: String,
+    val position: String,
+    val shirtNumber: Int,
+    val status: String,
+    val captain: Boolean,
+    val playerStats: PlayerStats
+)

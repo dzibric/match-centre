@@ -1,16 +1,11 @@
 package com.incrowd.matchcentre.data.match.models.stats
 
+import com.incrowd.matchcentre.data.models.Team
+
 class StatsData(
     val id: String,
-    val homeTeamName: String,
-    val homeTeamId: String,
-    val homeTeamImageUrl: String,
-    val homeScore: Int,
-    val awayTeamName: String,
-    val awayTeamId: String,
-    val awayTeamImageUrl: String,
-    val awayScore: Int,
     val competition: String,
-    val competitionEntries: List<>
-) {
-}
+    val date: String,
+    val homeTeam: Team,
+    val awayTeam: Team
+)

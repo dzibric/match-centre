@@ -1,36 +1,34 @@
 package com.incrowd.matchcentre.ui
 
-import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.incrowd.matchcentre.R
 import com.incrowd.matchcentre.databinding.ActivityMainBinding
+import com.incrowd.matchcentre.ui.base.BaseActivity
+import com.incrowd.matchcentre.ui.commentary.CommentaryFragmentDirections
+import com.incrowd.matchcentre.ui.stats.StatsFragmentDirections
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    private lateinit var binding: ActivityMainBinding
+    override val binding by viewBinding(ActivityMainBinding::inflate)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val navView: BottomNavigationView = binding.navView
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+    override fun setupViews(viewBinding: ActivityMainBinding) {
+        binding.radioGroup.apply {
+            setOnCheckedChangeListener { _, checkedId ->
+                when (checkedId) {
+                    R.id.btn_commentary -> {
+                        findNavController(R.id.fragment_container_view).navigate(
+                            StatsFragmentDirections.actionStatsToCommentary()
+                        )
+                    }
+                    R.id.btn_stats -> {
+                        findNavController(R.id.fragment_container_view).navigate(
+                            CommentaryFragmentDirections.actionCommentaryToStats()
+                        )
+                    }
+                }
+            }
+        }
     }
 }

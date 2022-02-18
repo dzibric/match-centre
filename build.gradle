@@ -3,6 +3,8 @@ buildscript {
         vRetrofit = "2.6.1"
         vRoom = "2.4.1"
         vHilt = "2.38.1"
+        vCoroutines = "1.6.0"
+        vLifecycle = "2.4.1"
     }
     repositories {
         google()

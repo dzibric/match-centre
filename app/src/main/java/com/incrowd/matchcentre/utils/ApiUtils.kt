@@ -6,7 +6,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-fun <T> createRestClient(api: Class<T>, baseUrl: String = BuildConfig.BASE_URL): T {
+fun <T> createService(api: Class<T>, baseUrl: String = BuildConfig.BASE_URL): T {
     val logger = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }
 
     val client = OkHttpClient.Builder()
