@@ -6,4 +6,10 @@
     <string name="commentary">Commentary</string>
     <string name="match_stats">Match Stats</string>
     <string name="result_string">%d - %d</string>
+    <string name="details">Details</string>
+    <string name="half_name">%d. Half</string>
+    <string name="game_info">Game Info</string>
+    <string name="referee">Referee</string>
+    <string name="stadium">Stadium</string>
+    <string name="attendance">Attendance</string>
 </resources>

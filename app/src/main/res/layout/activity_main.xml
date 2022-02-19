@@ -6,52 +6,30 @@
     android:layout_height="match_parent"
     android:background="@drawable/default_background">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_container_view"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <include
+        android:id="@+id/header_layout"
+        layout="@layout/main_header_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_main" />
+        android:layout_height="210dp" />
 
-    <RadioGroup
-        android:id="@+id/radio_group"
-        android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
-        android:elevation="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/colorPrimary"
+        android:elevation="20dp"
+        app:layout_constraintTop_toBottomOf="@id/header_layout"
+        app:tabIndicatorColor="@color/white"
+        app:tabTextAppearance="@style/TabText"
+        app:tabTextColor="@color/tab_item_text_color" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <RadioButton
-            android:id="@+id/btn_commentary"
-            android:layout_width="146dp"
-            android:layout_height="46dp"
-            android:background="@drawable/radio_button_left"
-            android:button="@null"
-            android:checked="true"
-            android:fontFamily="@font/barlow_condensed_medium"
-            android:gravity="center"
-            android:text="@string/commentary"
-            android:textAllCaps="true"
-            android:textColor="@color/bottom_nav_item_color"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/btn_stats"
-            android:layout_width="146dp"
-            android:layout_height="46dp"
-            android:background="@drawable/radio_button_right"
-            android:button="@null"
-            android:fontFamily="@font/barlow_condensed_medium"
-            android:gravity="center"
-            android:text="@string/match_stats"
-            android:textAllCaps="true"
-            android:textColor="@color/bottom_nav_item_color"
-            android:textSize="20sp" />
-    </RadioGroup>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

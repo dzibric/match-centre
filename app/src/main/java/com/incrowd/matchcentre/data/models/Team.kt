@@ -7,7 +7,10 @@ class Team(
     val name: String,
     val shortName: String,
     val score: Int,
+    val halfTimeScore: Int,
     val players: List<Player>,
     val teamStats: TeamStats,
     val imageUrl: String
-)
+) {
+    fun getSecondHalfScore() = score - halfTimeScore
+}

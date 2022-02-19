@@ -1,0 +1,33 @@
+package com.incrowd.matchcentre.ui.main.details
+
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LifecycleOwner
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.incrowd.matchcentre.R
+import com.incrowd.matchcentre.databinding.FragmentDetailsBinding
+import com.incrowd.matchcentre.ui.base.BaseViewModelFragment
+import com.incrowd.matchcentre.ui.main.MainViewModel
+import com.incrowd.matchcentre.utils.MATCH_ID
+import com.incrowd.matchcentre.utils.viewBinding
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class DetailsFragment :
+    BaseViewModelFragment<MainViewModel>(R.layout.fragment_details) {
+
+    private val binding by viewBinding(FragmentDetailsBinding::bind)
+    override val viewModel: MainViewModel by activityViewModels()
+
+    override fun onViewVisible() {
+        viewModel.getStatsData(MATCH_ID)
+    }
+
+    override fun setupViewModel(viewModel: MainViewModel, owner: LifecycleOwner) {
+        viewModel.statsData.observe(owner) { data ->
+            binding.apply {
+                recyclerView.layoutManager = LinearLayoutManager(context)
+                recyclerView.adapter = DetailsAdapter(data)
+            }
+        }
+    }
+}

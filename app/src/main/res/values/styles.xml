@@ -28,4 +28,11 @@
         <item name="android:shadowRadius">2</item>
     </style>
 
+    <style name="TabText" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/barlow_condensed_medium</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>
