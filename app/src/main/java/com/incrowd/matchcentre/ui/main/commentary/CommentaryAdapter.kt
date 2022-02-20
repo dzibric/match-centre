@@ -59,7 +59,7 @@ class CommentaryAdapter(commentaryData: CommentaryData) :
                         typeface = Typeface.DEFAULT_BOLD
                         setTextColor(context.getColor(R.color.yellow))
                     }
-                    START, END_1, END_14, END_2, START_DELAY-> {
+                    START, END_1, END_14, END_2, START_DELAY -> {
                         typeface = Typeface.DEFAULT_BOLD
                         setTextColor(context.getColor(R.color.white))
                     }

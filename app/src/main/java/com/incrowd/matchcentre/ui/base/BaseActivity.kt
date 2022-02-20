@@ -19,9 +19,6 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
         setupViews(binding)
     }
 
-    /**
-     * Start with view handling in this method, no need to access [onCreate] just for this
-     */
     abstract fun setupViews(viewBinding: VB)
 
     inline fun <T : ViewBinding> AppCompatActivity.viewBinding(
