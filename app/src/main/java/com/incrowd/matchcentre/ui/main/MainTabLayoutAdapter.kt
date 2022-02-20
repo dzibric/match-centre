@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.incrowd.matchcentre.R
-import com.incrowd.matchcentre.ui.main.fragment.CommentaryFragment
+import com.incrowd.matchcentre.ui.main.commentary.CommentaryFragment
 import com.incrowd.matchcentre.ui.main.details.DetailsFragment
 import com.incrowd.matchcentre.ui.main.stats.StatsFragment
 

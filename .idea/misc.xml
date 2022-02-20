@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.31567028985507245" />
         <entry key="app/src/main/res/layout/fragment_stats.xml" value="0.16822916666666668" />
         <entry key="app/src/main/res/layout/item_away_event.xml" value="0.31567028985507245" />
+        <entry key="app/src/main/res/layout/item_commentary.xml" value="0.45" />
         <entry key="app/src/main/res/layout/item_game_half.xml" value="0.31567028985507245" />
         <entry key="app/src/main/res/layout/item_game_info.xml" value="0.31567028985507245" />
         <entry key="app/src/main/res/layout/item_home_event.xml" value="0.31567028985507245" />
