@@ -12,4 +12,15 @@
     <string name="referee">Referee</string>
     <string name="stadium">Stadium</string>
     <string name="attendance">Attendance</string>
+    <string name="possession">Possession</string>
+    <string name="shots">Shots</string>
+    <string name="shots_on_target">Shots On Target</string>
+    <string name="shots_off_target">Shots Off Target</string>
+    <string name="shots_blocked">Shots Blocked</string>
+    <string name="free_kicks">Free Kicks</string>
+    <string name="corners">Corners</string>
+    <string name="throw_ins">Throw Ins</string>
+    <string name="saves">Saves</string>
+    <string name="yellow_cards">Yellow Cards</string>
+    <string name="stat">%d%s</string>
 </resources>

@@ -2,6 +2,7 @@ package com.incrowd.matchcentre.ui.main.stats
 
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LifecycleOwner
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.incrowd.matchcentre.R
 import com.incrowd.matchcentre.databinding.FragmentStatsBinding
 import com.incrowd.matchcentre.ui.base.BaseViewModelFragment
@@ -23,8 +24,10 @@ class StatsFragment :
 
     override fun setupViewModel(viewModel: MainViewModel, owner: LifecycleOwner) {
         viewModel.statsData.observe(owner) { data ->
-            data
+            binding.recyclerView.apply {
+                layoutManager = LinearLayoutManager(context)
+                adapter = StatsAdapter(data)
+            }
         }
-
     }
 }
